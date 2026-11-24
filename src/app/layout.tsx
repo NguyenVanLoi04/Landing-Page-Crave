@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "CRAVE - Ứng Dụng Khám Phá Món Ăn & Địa Điểm Ăn Uống | Food Discovery App",
-    template: "%s | CRAVE - Ứng Dụng Khám Phá Món Ăn & Quán Ăn Ngon",
+    template: "%s | CRAVE",
   },
   description:
     "CRAVE là ứng dụng khám phá món ăn và địa điểm ăn uống ngon gần bạn tại Sài Gòn. Tìm quán ăn nhanh chóng với vòng xoay ngẫu nhiên Decider Wheel, lướt thẻ món ăn Swipe và định vị ẩm thực Food Radar.",
