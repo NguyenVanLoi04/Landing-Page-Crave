@@ -17,7 +17,7 @@ export default function Navbar() {
           <div className="relative size-8 rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-200">
             <Image
               src="/assets/crave-logo.png"
-              alt="Crave Logo"
+              alt="CRAVE - Ứng dụng khám phá món ăn và địa điểm ăn uống"
               width={32}
               height={32}
               className="object-cover"

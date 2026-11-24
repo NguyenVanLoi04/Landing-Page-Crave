@@ -18,7 +18,7 @@ export default function CulinaryBanner() {
           {/* Background image */}
           <Image
             src="/assets/banner_pho_4k.jpg"
-            alt="Authentic Saigon Culinary Showcase"
+            alt="CRAVE - Khám phá tinh hoa ẩm thực đường phố và nhà hàng Sài Gòn"
             fill
             quality={95}
             sizes="(max-width: 1280px) 100vw, 1280px"

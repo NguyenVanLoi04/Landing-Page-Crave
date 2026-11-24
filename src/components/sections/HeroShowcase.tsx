@@ -28,7 +28,7 @@ export default function HeroShowcase() {
           <div className="size-12 rounded-full bg-crave-accent-light flex items-center justify-center shrink-0">
             <Image
               src="/assets/icon-card-flavor.svg"
-              alt="Noodle Bowl"
+              alt="Món Phở Bò Tái Lăn - Khám phá món ăn trên CRAVE"
               width={20}
               height={20}
               className="object-contain"
@@ -48,7 +48,7 @@ export default function HeroShowcase() {
           <div className="size-3.5 relative">
             <Image
               src="/assets/icon-card-match.svg"
-              alt="Popular"
+              alt="Biểu tượng món ăn thịnh hành"
               fill
               className="object-contain"
             />
@@ -97,7 +97,7 @@ export default function HeroShowcase() {
             <div className="relative h-60 w-full overflow-hidden">
               <Image
                 src="/assets/hero-dish-pho.png"
-                alt="Bánh Mì Đặc Biệt"
+                alt="Bánh Mì Đặc Biệt Huỳnh Hoa - Gợi ý món ăn ngon trên ứng dụng CRAVE"
                 fill
                 quality={95}
                 sizes="330px"
@@ -144,7 +144,7 @@ export default function HeroShowcase() {
                   <div className="size-3.5 relative">
                     <Image
                       src="/assets/icon-pass-x.svg"
-                      alt="Pass"
+                      alt="Bỏ qua món ăn"
                       fill
                       className="object-contain"
                     />
@@ -160,7 +160,7 @@ export default function HeroShowcase() {
                   <div className="size-3.5 relative">
                     <Image
                       src="/assets/icon-star.svg"
-                      alt="Bookmark"
+                      alt="Lưu món ăn vào bộ sưu tập"
                       fill
                       className="object-contain"
                     />
@@ -176,7 +176,7 @@ export default function HeroShowcase() {
                   <div className="size-5 relative">
                     <Image
                       src="/assets/icon-heart.svg"
-                      alt="Like"
+                      alt="Thích món ăn"
                       fill
                       className="object-contain"
                     />
@@ -192,7 +192,7 @@ export default function HeroShowcase() {
               <div className="size-4 relative">
                 <Image
                   src="/assets/icon-tab-home.svg"
-                  alt="Swipe"
+                  alt="Khám phá lướt món ăn"
                   fill
                   className="object-contain"
                 />
@@ -203,7 +203,7 @@ export default function HeroShowcase() {
               <div className="size-4 relative opacity-60">
                 <Image
                   src="/assets/icon-tab-radar.svg"
-                  alt="Wheel"
+                  alt="Vòng xoay chọn món"
                   fill
                   className="object-contain"
                 />
@@ -214,7 +214,7 @@ export default function HeroShowcase() {
               <div className="size-4 relative opacity-60">
                 <Image
                   src="/assets/icon-tab-vault.svg"
-                  alt="Radar"
+                  alt="Radar định vị ẩm thực"
                   fill
                   className="object-contain"
                 />
@@ -225,7 +225,7 @@ export default function HeroShowcase() {
               <div className="size-4 relative opacity-60">
                 <Image
                   src="/assets/icon-tab-profile.svg"
-                  alt="Saved"
+                  alt="Món ăn đã lưu"
                   fill
                   className="object-contain"
                 />
@@ -255,7 +255,7 @@ export default function HeroShowcase() {
           <div className="size-10 rounded-full bg-crave-border flex items-center justify-center shrink-0">
             <Image
               src="/assets/iphone-home-indicator.svg"
-              alt="Map Pin"
+              alt="Địa điểm ẩm thực Bến Nghé Sài Gòn"
               width={16}
               height={16}
               className="object-contain"

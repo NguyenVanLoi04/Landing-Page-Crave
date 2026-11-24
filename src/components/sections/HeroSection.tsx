@@ -42,6 +42,7 @@ export default function HeroSection() {
                 />
               </svg>
             </span>
+            <span className="sr-only"> - CRAVE: Ứng dụng khám phá món ăn và địa điểm ăn uống tại Sài Gòn</span>
           </h1>
         </motion.div>
 
@@ -71,7 +72,7 @@ export default function HeroSection() {
             <div className="size-5 relative">
               <Image
                 src="/assets/icon-app-store.svg"
-                alt="Download"
+                alt="Tải ứng dụng CRAVE trên iOS và Android"
                 fill
                 className="object-contain"
               />

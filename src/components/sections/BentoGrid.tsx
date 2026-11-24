@@ -38,7 +38,7 @@ export default function BentoGrid() {
               <div className="size-10 rounded-full bg-crave-border flex items-center justify-center mb-4">
                 <Image
                   src="/assets/icon-swipe.svg"
-                  alt="Swipe Icon"
+                  alt="Tính năng lướt chọn món ăn Swipe to Savor"
                   width={18}
                   height={13}
                   className="object-contain"
@@ -60,7 +60,7 @@ export default function BentoGrid() {
               <div className="absolute right-4 sm:right-16 top-6 rotate-6 w-[260px] sm:w-[280px] h-[230px] rounded-[32px] bg-crave-border-soft shadow-sm overflow-hidden opacity-80">
                 <Image
                   src="/assets/cuisine-preview-pho.png"
-                  alt="Cuisine Preview"
+                  alt="Hình ảnh xem trước món Phở bò truyền thống Sài Gòn"
                   fill
                   className="object-cover"
                 />
@@ -75,7 +75,7 @@ export default function BentoGrid() {
                 <div className="relative h-44 w-full">
                   <Image
                     src="/assets/banh-mi-thit-nuong.png"
-                    alt="Bánh Mì Thịt Nướng"
+                    alt="Bánh Mì Thịt Nướng Quận 3 - Món ngon đường phố Sài Gòn"
                     fill
                     quality={95}
                     sizes="290px"
@@ -102,7 +102,7 @@ export default function BentoGrid() {
                   >
                     <Image
                       src="/assets/icon-wheel-sparkles.svg"
-                      alt="Save"
+                      alt="Lưu món ăn yêu thích"
                       width={15}
                       height={14}
                       className="object-contain"
@@ -125,7 +125,7 @@ export default function BentoGrid() {
               <div className="size-10 rounded-full bg-crave-accent-subtle flex items-center justify-center mb-4">
                 <Image
                   src="/assets/icon-wheel-pointer.svg"
-                  alt="Wheel Icon"
+                  alt="Vòng xoay chọn món ăn The Crave Wheel"
                   width={17}
                   height={17}
                   className="object-contain"
@@ -157,7 +157,7 @@ export default function BentoGrid() {
               <div className="size-10 rounded-full bg-crave-border-soft flex items-center justify-center mb-4">
                 <Image
                   src="/assets/icon-radar.svg"
-                  alt="Radar Icon"
+                  alt="Bản đồ quét quán ăn ngon Neighborhood Food Radar"
                   width={18}
                   height={18}
                   className="object-contain"
@@ -198,7 +198,7 @@ export default function BentoGrid() {
                 <div className="size-3 relative opacity-60">
                   <Image
                     src="/assets/icon-arrow-right.svg"
-                    alt="Arrow"
+                    alt="Xem chi tiết quán Cơm Tấm Ba Ghiền"
                     fill
                     className="object-contain"
                   />
@@ -219,7 +219,7 @@ export default function BentoGrid() {
               <div className="size-10 rounded-full bg-crave-border flex items-center justify-center mb-4">
                 <Image
                   src="/assets/icon-playlist.svg"
-                  alt="Vault Icon"
+                  alt="Taste Playlists - Bộ sưu tập địa điểm ăn uống theo gu"
                   width={15}
                   height={18}
                   className="object-contain"

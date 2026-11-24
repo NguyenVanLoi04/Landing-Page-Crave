@@ -72,7 +72,7 @@ export default function HowItWorks() {
                 <div className="size-3.5 relative">
                   <Image
                     src={item.icon}
-                    alt={item.badge}
+                    alt={`Bước ${item.step}: ${item.title} - ${item.badge}`}
                     fill
                     className="object-contain"
                   />

@@ -9,9 +9,18 @@ import ImpactMilestones from "@/components/about/ImpactMilestones";
 import AboutCTA from "@/components/about/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "About Us - Our Story & Saigon Roots | Crave",
+  title: "Về CRAVE - Câu Chuyện & Cội Nguồn Ẩm Thực Sài Gòn",
   description:
-    "Founded in District 1, Crave pairs meticulous culinary cartography with mindful interface design to help Saigon eaters discover extraordinary flavors without the algorithmic clutter.",
+    "Tìm hiểu về CRAVE - Ứng dụng khám phá ẩm thực khởi nguồn từ Quận 1, TP.HCM. Sứ mệnh kết nối người sành ăn với các món ngon đích thực không qua quảng cáo.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "Về CRAVE - Câu Chuyện & Cội Nguồn Ẩm Thực Sài Gòn",
+    description:
+      "Tìm hiểu về CRAVE - Ứng dụng khám phá ẩm thực khởi nguồn từ Quận 1, TP.HCM. Sứ mệnh kết nối người sành ăn với các món ngon đích thực không qua quảng cáo.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {

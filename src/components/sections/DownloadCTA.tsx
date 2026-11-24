@@ -42,7 +42,7 @@ export default function DownloadCTA() {
                 <div className="size-5 relative">
                   <Image
                     src="/assets/icon-cta-apple.svg"
-                    alt="App Store"
+                    alt="Tải CRAVE trên Apple App Store cho iOS"
                     fill
                     className="object-contain"
                   />
@@ -59,7 +59,7 @@ export default function DownloadCTA() {
                 <div className="size-5 relative">
                   <Image
                     src="/assets/icon-cta-google.svg"
-                    alt="Google Play"
+                    alt="Tải CRAVE trên Google Play Store cho Android"
                     fill
                     className="object-contain"
                   />
@@ -78,7 +78,7 @@ export default function DownloadCTA() {
               <div className="size-full relative">
                 <Image
                   src="/assets/illustration-qr-code.svg"
-                  alt="QR Code"
+                  alt="Mã QR quét tải ngay ứng dụng CRAVE cho iOS và Android"
                   fill
                   className="object-contain"
                 />

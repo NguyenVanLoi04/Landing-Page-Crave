@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="relative size-7 rounded-xl overflow-hidden shadow-sm">
                 <Image
                   src="/assets/crave-logo.png"
-                  alt="Crave Logo"
+                  alt="CRAVE Logo - Food Discovery"
                   width={28}
                   height={28}
                   className="object-cover"
@@ -104,13 +104,13 @@ export default function Footer() {
           <p>© 2025 Crave Technologies Inc. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span className="size-4 relative opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
-              <Image src="/assets/icon-social-instagram.svg" alt="Social" fill className="object-contain" />
+              <Image src="/assets/icon-social-instagram.svg" alt="Instagram CRAVE" fill className="object-contain" />
             </span>
             <span className="size-4 relative opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
-              <Image src="/assets/icon-social-x.svg" alt="Social" fill className="object-contain" />
+              <Image src="/assets/icon-social-x.svg" alt="Twitter X CRAVE" fill className="object-contain" />
             </span>
             <span className="size-4 relative opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
-              <Image src="/assets/icon-social-facebook.svg" alt="Social" fill className="object-contain" />
+              <Image src="/assets/icon-social-facebook.svg" alt="Facebook CRAVE" fill className="object-contain" />
             </span>
           </div>
         </div>
