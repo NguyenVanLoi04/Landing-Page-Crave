@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://craveapp.vn";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://crave.io.vn";
   const lastModified = new Date();
 
   return [

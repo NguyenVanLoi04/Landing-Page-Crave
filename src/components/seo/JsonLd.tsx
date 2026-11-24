@@ -1,5 +1,5 @@
 export default function JsonLd() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://craveapp.vn";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://crave.io.vn";
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -25,14 +25,14 @@ export default function JsonLd() {
       caption: "CRAVE Logo",
     },
     sameAs: [
-      "https://facebook.com/craveapp.vn",
-      "https://instagram.com/craveapp.vn",
+      "https://facebook.com/crave.io.vn",
+      "https://instagram.com/crave.io.vn",
       "https://twitter.com/craveapp",
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "hello@craveapp.vn",
+      email: "hello@crave.io.vn",
       areaServed: "VN",
       availableLanguage: ["Vietnamese", "English"],
     },

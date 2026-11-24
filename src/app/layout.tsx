@@ -10,7 +10,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://craveapp.vn";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://crave.io.vn";
 
 export const viewport: Viewport = {
   themeColor: "#005eb8",
