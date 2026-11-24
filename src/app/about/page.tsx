@@ -9,16 +9,16 @@ import ImpactMilestones from "@/components/about/ImpactMilestones";
 import AboutCTA from "@/components/about/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "Câu Chuyện & Cội Nguồn Ẩm Thực Sài Gòn",
+  title: "Về Chúng Tôi",
   description:
-    "Tìm hiểu về CRAVE - Ứng dụng khám phá ẩm thực khởi nguồn từ Quận 1, TP.HCM. Sứ mệnh kết nối người sành ăn với các món ngon đích thực không qua quảng cáo.",
+    "Giới thiệu ứng dụng CRAVE - Nền tảng khám phá ẩm thực khởi nguồn từ Quận 1, kết nối người sành ăn với các món ngon đích thực.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "Câu Chuyện & Cội Nguồn Ẩm Thực Sài Gòn | CRAVE",
+    title: "Về Chúng Tôi | CRAVE",
     description:
-      "Tìm hiểu về CRAVE - Ứng dụng khám phá ẩm thực khởi nguồn từ Quận 1, TP.HCM. Sứ mệnh kết nối người sành ăn với các món ngon đích thực không qua quảng cáo.",
+      "Giới thiệu ứng dụng CRAVE - Nền tảng khám phá ẩm thực khởi nguồn từ Quận 1, kết nối người sành ăn với các món ngon đích thực.",
     url: "/about",
   },
 };

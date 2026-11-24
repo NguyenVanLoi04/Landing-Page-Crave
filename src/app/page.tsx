@@ -10,9 +10,9 @@ import Testimonials from "@/components/sections/Testimonials";
 import DownloadCTA from "@/components/sections/DownloadCTA";
 
 export const metadata: Metadata = {
-  title: "CRAVE - Ứng Dụng Khám Phá Món Ăn & Địa Điểm Ăn Uống | Food Discovery App",
+  title: "CRAVE - Khám Phá Món Ăn",
   description:
-    "CRAVE là ứng dụng khám phá món ăn và địa điểm ăn uống ngon gần bạn tại Sài Gòn. Tìm quán ăn nhanh chóng với vòng xoay ngẫu nhiên Decider Wheel, lướt thẻ món ăn Swipe và định vị ẩm thực Food Radar.",
+    "Ứng dụng khám phá món ăn và quán ngon gần bạn tại Sài Gòn. Tìm kiếm quán ăn nhanh chóng với vòng xoay chọn món và lướt thẻ món ăn.",
   alternates: {
     canonical: "/",
   },
