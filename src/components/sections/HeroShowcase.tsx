@@ -258,7 +258,7 @@ export default function HeroShowcase() {
               alt="Địa điểm ẩm thực Bến Nghé Sài Gòn"
               width={16}
               height={16}
-              className="object-contain"
+              className="w-auto h-auto object-contain"
             />
           </div>
           <div className="flex flex-col min-w-0">

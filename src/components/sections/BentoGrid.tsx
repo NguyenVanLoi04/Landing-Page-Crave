@@ -1,11 +1,65 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Moon, UtensilsCrossed, Sparkles, ChevronRight } from "lucide-react";
+import {
+  Search,
+  CupSoda,
+  Soup,
+  Croissant,
+  Cookie,
+  ChevronRight,
+} from "lucide-react";
 import InteractiveWheel from "@/components/ui/InteractiveWheel";
 
+const FOOD_CATEGORIES = [
+  {
+    id: "coffee",
+    name: "Fruit Tea",
+    featuredDish: "Ô Long Nho Mẫu Đơn",
+    shopInfo: "Phúc Long D1",
+    price: "₫59,000",
+    image: "/assets/phuc-long-nho-mau-don.jpg",
+    Icon: CupSoda,
+  },
+  {
+    id: "noodles",
+    name: "Noodles",
+    featuredDish: "Phở Bò Tái Lăn",
+    shopInfo: "Phở Thìn • D1",
+    price: "₫65,000",
+    image: "/assets/cuisine-preview-pho.png",
+    Icon: Soup,
+  },
+  {
+    id: "banh-mi",
+    name: "Bánh Mì",
+    featuredDish: "Bánh Mì Thịt Nướng",
+    shopInfo: "District 3",
+    price: "₫35,000",
+    image: "/assets/banh-mi-thit-nuong.png",
+    Icon: Croissant,
+  },
+  {
+    id: "snacks",
+    name: "Snacks",
+    featuredDish: "Bánh Xèo Miền Tây",
+    shopInfo: "District 1",
+    price: "₫55,000",
+    image: "/assets/playlist-street-food.jpg",
+    Icon: Cookie,
+  },
+] as const;
+
+type FoodCategoryId = (typeof FOOD_CATEGORIES)[number]["id"];
+
 export default function BentoGrid() {
+  const [activeCategory, setActiveCategory] = useState<FoodCategoryId>("coffee");
+
+  const currentCategory =
+    FOOD_CATEGORIES.find((cat) => cat.id === activeCategory) || FOOD_CATEGORIES[0];
+
   return (
     <section id="features" className="py-24 bg-crave-bg">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 flex flex-col items-center">
@@ -62,6 +116,7 @@ export default function BentoGrid() {
                   src="/assets/cuisine-preview-pho.png"
                   alt="Hình ảnh xem trước món Phở bò truyền thống Sài Gòn"
                   fill
+                  sizes="280px"
                   className="object-cover"
                 />
               </div>
@@ -144,64 +199,88 @@ export default function BentoGrid() {
             <InteractiveWheel />
           </motion.div>
 
-          {/* Bento Card 3: Local Radar (5 cols) */}
+          {/* Bento Card 3: Food Categories Explorer (5 cols) */}
           <motion.div
             id="food-radar"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-5 bg-white rounded-[32px] p-8 shadow-[0px_8px_24px_-4px_rgba(23,43,69,0.06),0px_2px_6px_-1px_rgba(0,94,184,0.04)] border border-crave-body/5 flex flex-col justify-between"
+            className="@container lg:col-span-5 bg-white rounded-[32px] p-8 shadow-[0px_8px_24px_-4px_rgba(23,43,69,0.06),0px_2px_6px_-1px_rgba(0,94,184,0.04)] border border-crave-body/5 flex flex-col justify-between"
           >
             <div>
               <div className="size-10 rounded-full bg-crave-border-soft flex items-center justify-center mb-4">
-                <Image
-                  src="/assets/icon-radar.svg"
-                  alt="Bản đồ quét quán ăn ngon Neighborhood Food Radar"
-                  width={18}
-                  height={18}
-                  className="object-contain"
-                />
+                <Search className="size-4.5 text-crave-primary" strokeWidth={2.2} />
               </div>
-              <h3 className="text-2xl sm:text-[28px] font-bold text-crave-navy tracking-tight">
-                Neighborhood Radar
+              <h3 className="text-2xl sm:text-[28px] font-bold text-crave-navy tracking-tight text-balance">
+                Explore by Food Type
               </h3>
               <p className="mt-2 text-crave-muted text-[15px] leading-relaxed">
-                Filter by distance under 1km, live seat availability, and queue
-                times so your lunch break is never wasted.
+                Search across local food categories—from steaming phở and crispy
+                bánh mì to refreshing fruit tea.
               </p>
             </div>
 
-            {/* Radar preview card */}
-            <div className="mt-6 bg-crave-soft p-4 rounded-[32px] flex flex-col gap-3">
-              <div className="flex items-center justify-between text-[11px]">
-                <span className="font-bold tracking-wider uppercase text-crave-muted">
-                  NEARBY RADAR PULSE
-                </span>
-                <span className="font-semibold text-crave-primary-hover">
-                  Active • 800m
-                </span>
+            {/* Clean Single-Row Category Pills + Product Card */}
+            <div className="mt-6 flex flex-col gap-3.5">
+              {/* 4 Clean Pills in 1 Row */}
+              <div className="flex flex-wrap items-center gap-2">
+                {FOOD_CATEGORIES.map(({ id, name, Icon }) => {
+                  const isActive = activeCategory === id;
+                  return (
+                    <button
+                      key={id}
+                      type="button"
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-semibold transition-all duration-200 cursor-pointer ${isActive
+                        ? "bg-crave-primary text-white shadow-[0_6px_14px_-2px_rgba(0,94,184,0.3)]"
+                        : "bg-crave-soft/80 text-crave-navy hover:bg-crave-soft border border-crave-border/60"
+                        }`}
+                    >
+                      <Icon
+                        className={`size-3.5 ${isActive ? "text-white" : "text-crave-primary"
+                          }`}
+                        strokeWidth={2.2}
+                      />
+                      <span>{name}</span>
+                    </button>
+                  );
+                })}
               </div>
 
-              <div className="bg-white p-3 rounded-2xl drop-shadow-sm flex items-center gap-3">
-                <div className="size-10 rounded-full bg-crave-primary text-white font-bold text-[15px] flex items-center justify-center shrink-0">
-                  8m
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-crave-navy text-[15px] truncate">
-                    Cơm Tấm Ba Ghiền
-                  </h4>
-                  <p className="text-crave-muted text-[12px] truncate">
-                    Fast turnover • 2 tables open
-                  </p>
-                </div>
-                <div className="size-3 relative opacity-60">
+              {/* Dynamic Product Card matching CRAVE's signature card UI */}
+              <div className="group rounded-[28px] bg-white shadow-[0px_12px_28px_rgba(23,43,69,0.08)] border border-crave-border/50 overflow-hidden flex flex-col transition-all duration-200 hover:shadow-[0px_16px_32px_rgba(0,94,184,0.12)] hover:-translate-y-0.5 cursor-pointer">
+                <div className="relative h-40 w-full overflow-hidden">
                   <Image
-                    src="/assets/icon-arrow-right.svg"
-                    alt="Xem chi tiết quán Cơm Tấm Ba Ghiền"
+                    src={currentCategory.image}
+                    alt={`${currentCategory.featuredDish} - ${currentCategory.name}`}
                     fill
-                    className="object-contain"
+                    quality={95}
+                    sizes="(max-width: 768px) 100vw, 420px"
+                    className="object-cover object-[center_65%] group-hover:scale-105 transition-transform duration-500"
                   />
+                </div>
+
+                <div className="p-3.5 bg-white flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-crave-navy text-[16px] leading-tight truncate">
+                      {currentCategory.featuredDish}
+                    </h4>
+                    <p className="text-crave-muted text-[12px] truncate mt-0.5">
+                      {currentCategory.shopInfo} • {currentCategory.price}
+                    </p>
+                  </div>
+                  <span
+                    className="size-9 rounded-full bg-crave-primary text-white flex items-center justify-center shadow-sm shrink-0 group-hover:bg-crave-primary-hover transition-colors"
+                    aria-label="Save dish"
+                  >
+                    <Image
+                      src="/assets/icon-wheel-sparkles.svg"
+                      alt="Lưu món ăn yêu thích"
+                      width={15}
+                      height={14}
+                      className="object-contain"
+                    />
+                  </span>
                 </div>
               </div>
             </div>
@@ -213,7 +292,7 @@ export default function BentoGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="lg:col-span-7 bg-white rounded-[32px] p-8 shadow-[0px_8px_24px_-4px_rgba(23,43,69,0.06),0px_2px_6px_-1px_rgba(0,94,184,0.04)] border border-crave-body/5 flex flex-col justify-between"
+            className="@container lg:col-span-7 bg-white rounded-[32px] p-8 shadow-[0px_8px_24px_-4px_rgba(23,43,69,0.06),0px_2px_6px_-1px_rgba(0,94,184,0.04)] border border-crave-body/5 flex flex-col justify-between"
           >
             <div>
               <div className="size-10 rounded-full bg-crave-border flex items-center justify-center mb-4">
@@ -222,66 +301,74 @@ export default function BentoGrid() {
                   alt="Taste Playlists - Bộ sưu tập địa điểm ăn uống theo gu"
                   width={15}
                   height={18}
-                  className="object-contain"
+                  className="w-auto h-auto object-contain"
                 />
               </div>
-              <h3 className="text-2xl sm:text-[28px] font-bold text-crave-navy tracking-tight">
+              <h3 className="text-2xl sm:text-[28px] font-bold text-crave-navy tracking-tight text-balance">
                 Taste Playlists & Vault
               </h3>
               <p className="mt-2 text-crave-muted text-[15px] leading-relaxed">
-                Curate your culinary desires just like Spotify playlists:
-                “Late-Night Phở Runs”, “Date Night Hidden Alleys”, or “Crispy
-                Snacking in D1”.
+                Save and organize your go-to comfort picks like Spotify
+                playlists—from crispy fried chicken feasts to savory spaghetti
+                combos.
               </p>
             </div>
 
-            {/* Visual playlist pills */}
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-              <motion.div
-                whileHover={{ y: -2, scale: 1.01 }}
-                transition={{ duration: 0.2 }}
-                className="group bg-[#f2f6ff] hover:bg-[#eaf1ff] border border-crave-border/70 p-3.5 rounded-2xl flex items-center justify-between gap-3 transition-colors cursor-pointer shadow-[0_2px_8px_rgba(23,43,69,0.02)]"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="size-10 rounded-xl bg-gradient-to-br from-crave-primary to-crave-primary-hover flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,94,184,0.25)] group-hover:scale-105 transition-transform">
-                    <Moon className="size-4 text-white" strokeWidth={2.2} />
+            {/* Visual 2-card editorial showcase with user-selected Gà Rán & Jollibee images */}
+            <div className="mt-6 grid grid-cols-1 @sm:grid-cols-2 gap-4">
+              {/* Card 1: Gà Rán */}
+              <div className="group bg-crave-soft/75 hover:bg-white border border-crave-border/60 rounded-[24px] overflow-hidden transition-all duration-200 cursor-pointer shadow-[0_2px_10px_rgba(23,43,69,0.03)] hover:shadow-[0_12px_24px_-6px_rgba(0,94,184,0.16)] hover:-translate-y-1 flex flex-col">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src="/assets/ga-ran-gion-cay.jpg"
+                    alt="Gà Rán Giòn Cay - Gà rán giòn rụm vàng ươm trên CRAVE"
+                    fill
+                    quality={95}
+                    sizes="(max-width: 768px) 100vw, 340px"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 flex items-center justify-between gap-2">
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-crave-navy text-[15px] tracking-tight truncate group-hover:text-crave-primary transition-colors">
+                      Gà Rán Giòn Cay
+                    </h4>
+                    <p className="text-crave-muted text-[12px] truncate mt-0.5">
+                      KFC • ₫79,000
+                    </p>
                   </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="font-bold text-crave-navy text-[13px] tracking-tight truncate group-hover:text-crave-primary transition-colors">
-                      Midnight Cravings
-                    </span>
-                    <span className="text-crave-muted text-[12px] truncate">
-                      14 saved spots • Saigon
-                    </span>
+                  <div className="size-7 rounded-full bg-white border border-crave-border/60 flex items-center justify-center text-crave-primary group-hover:bg-crave-primary group-hover:text-white transition-colors shrink-0">
+                    <ChevronRight className="size-4" strokeWidth={2.2} />
                   </div>
                 </div>
-                <div className="size-5 rounded-full bg-white/80 flex items-center justify-center text-crave-primary opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
-                  <ChevronRight className="size-3" strokeWidth={2.5} />
-                </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                whileHover={{ y: -2, scale: 1.01 }}
-                transition={{ duration: 0.2 }}
-                className="group bg-[#f2f6ff] hover:bg-[#eaf1ff] border border-crave-border/70 p-3.5 rounded-2xl flex items-center justify-between gap-3 transition-colors cursor-pointer shadow-[0_2px_8px_rgba(23,43,69,0.02)]"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="size-10 rounded-xl bg-gradient-to-br from-[#00629e] to-crave-navy flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,98,158,0.25)] group-hover:scale-105 transition-transform">
-                    <UtensilsCrossed className="size-4 text-white" strokeWidth={2.2} />
+              {/* Card 2: Jollibee */}
+              <div className="group bg-crave-soft/75 hover:bg-white border border-crave-border/60 rounded-[24px] overflow-hidden transition-all duration-200 cursor-pointer shadow-[0_2px_10px_rgba(23,43,69,0.03)] hover:shadow-[0_12px_24px_-6px_rgba(0,94,184,0.16)] hover:-translate-y-1 flex flex-col">
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src="/assets/jollibee-cap-doi-an-y.jpg"
+                    alt="Gà Giòn Vui Vẻ & Mì Ý Jolly - Cặp đôi ăn ý Jollibee"
+                    fill
+                    quality={95}
+                    sizes="(max-width: 768px) 100vw, 340px"
+                    className="object-cover object-[75%_center] group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 flex items-center justify-between gap-2">
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-crave-navy text-[15px] tracking-tight truncate group-hover:text-crave-primary transition-colors">
+                      Gà Giòn Vui Vẻ &amp; Mì Ý
+                    </h4>
+                    <p className="text-crave-muted text-[12px] truncate mt-0.5">
+                      Jollibee • ₫69,000
+                    </p>
                   </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="font-bold text-crave-navy text-[13px] tracking-tight truncate group-hover:text-crave-primary transition-colors">
-                      Date Night Izakaya
-                    </span>
-                    <span className="text-crave-muted text-[12px] truncate">
-                      8 curated gems • Thao Dien
-                    </span>
+                  <div className="size-7 rounded-full bg-white border border-crave-border/60 flex items-center justify-center text-crave-primary group-hover:bg-crave-primary group-hover:text-white transition-colors shrink-0">
+                    <ChevronRight className="size-4" strokeWidth={2.2} />
                   </div>
                 </div>
-                <div className="size-5 rounded-full bg-white/80 flex items-center justify-center text-crave-primary opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
-                  <ChevronRight className="size-3" strokeWidth={2.5} />
-                </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
